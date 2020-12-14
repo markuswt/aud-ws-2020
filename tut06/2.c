@@ -6,7 +6,7 @@ typedef struct element* list;
 struct element {int value; list next;};
 
 
-void print_list(list l) {
+void printList(list l) {
     printf("[");
     while (l != NULL) {
         printf("%d", (*l).value);
@@ -43,7 +43,7 @@ int sum(list l) {
 }
 
 
-void rm_evens(list* lp) {
+void rmEvens(list* lp) {
     while (*lp != NULL) {
         if ((**lp).value % 2 == 0) {
             list tmp = *lp;
@@ -77,14 +77,14 @@ int main() {
     append(&l, 0);
 
     printf("List: ");
-    print_list(l);
+    printList(l);
 
     printf("Sum: %d\n", sum(l));
 
     printf("Newly constructed list of odd numbers: ");
-    print_list(odds(l));
+    printList(odds(l));
 
-    rm_evens(&l);
+    rmEvens(&l);
     printf("Modified list of odd numbers: ");
-    print_list(l);
+    printList(l);
 }
